@@ -1,67 +1,67 @@
 console.log('client.js is sourced!');
 
 function onReady() {
-  console.log("JavaScript is loaded!")
+    console.log("JavaScript is loaded!")
 }
 
 onReady()
-let operators = "";
+let operator = "";
 
-function formSubmit(event){
+function formSubmit(event) {
     event.preventDefault()
 }
-function onAdd(){
-    operators = "+"
-    console.log("checking add function", operators);
+function onAdd() {
+    operator = "+";
+    console.log("checking add function", operator);
 }
 
-function onSubtract(){
-    operators = "-"
+function onSubtract() {
+    operator = "-";
 
     console.log("checking subtract function",);
 
 }
 
-function onMultiply(){
-    operators = "*"
+function onMultiply() {
+    operator = "*";
     console.log("checking multiply function",);
 
 }
 
-function onDivide(){
-    operators = "/"
+function onDivide() {
+    operator = "/";
     console.log("checking divide function",);
 
 }
 
 
-function onEquals(){
+function onEquals() {
     let firstNumber = document.getElementById('numberOneIn').value;
     let secondNumber = document.getElementById('numberTwoIn').value;
     let newCalc = {
         firstNumber,
         secondNumber,
-        operators
+        operator
     }
     document.getElementById('numberOneIn').value = '';
     document.getElementById('numberTwoIn').value = '';
-    console.log("checking equal function", firstNumber, secondNumber, operators, newCalc);
-//     axios({
-//         url: '/result',
-//         method: 'POST'
-//     }).then((response) => {
-//         console.log('response.data:', response.data)
-//         let equations = response.data
-//         renderEquation(equations)
-//     })
+    console.log("checking equal function", firstNumber, secondNumber, operator, newCalc);
+    //     axios({
+    //         url: '/result',
+    //         method: 'POST'
+    //     }).then((response) => {
+    //         console.log('response.data:', response.data)
+    //         let equations = response.data
+    //         renderEquation(equations)
+    //     })
 }
 
 
-function onClear(){
+function onClear() {
     document.getElementById('numberOneIn').value = '';
     document.getElementById('numberTwoIn').value = '';
 
-    console.log("checking clear function", );
+    console.log("checking clear function");
 
 }
 function renderEquation(equations) {
@@ -71,6 +71,6 @@ function renderEquation(equations) {
         <p>${equation}:</p><br>
 
       `
-      console.log('is my equation list working?', equation);
+        console.log('is my equation list working?', equation);
     }
 }
