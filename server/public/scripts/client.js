@@ -7,26 +7,32 @@ function onReady() {
 onReady()
 
 function onAdd(event){
+    event.preventDefault()
 
 }
 
 function onSubtract(event){
+    event.preventDefault()
     
 }
 
 function onMultiply(event){
+    event.preventDefault()
     
 }
 
 function onDivide(event){
+    event.preventDefault()
     
 }
 
 function onEquals(event){
+    event.preventDefault()
     
 }
 
 function onClear(event){
+    event.preventDefault()
     
 }
 //let roundCounter =0;
