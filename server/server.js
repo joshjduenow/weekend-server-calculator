@@ -27,7 +27,7 @@ app.post('/calculations', (req, res) => {
   console.log('POST /calculations received a request!')
   console.log('req.body', req.body)
   let newCalc = req.body
-  equations.push(newCalc)
+  calculations.push(newCalc)
   res.sendStatus(201)
 })
 

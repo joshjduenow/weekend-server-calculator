@@ -36,9 +36,9 @@ function onEquals() {
     let firstNumber = document.getElementById('numberOneIn').value;
     let secondNumber = document.getElementById('numberTwoIn').value;
     let newCalc = {
-        firstNumber,
-        operator,
-        secondNumber
+        firstNumber: firstNumber,
+        operator: operator,
+        secondNumber: secondNumber
         
     }
     document.getElementById('numberOneIn').value = '';
