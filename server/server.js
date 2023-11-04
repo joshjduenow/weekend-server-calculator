@@ -7,7 +7,7 @@ app.use(express.static('server/public'));
 
 // Global variable that will contain all of the
 // calculation objects:
-let history = [];
+let equations = [];
 let result;
 
 
@@ -15,11 +15,11 @@ let result;
 
 // GET /calculations
 app.get('/history', (req, res) => {
-  res.send(history);
+  res.send(equations);
 })
 // this sends the result to the client
 app.get('/result', (req, res) => {
-  res.send({result: result});
+  res.send({ result: result });
 })
 
 // POST /calculations
