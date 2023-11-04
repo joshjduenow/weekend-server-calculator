@@ -1,34 +1,31 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="utf-8">
+    <title>Server-Side Calculator</title>    
+    <script defer src="scripts/axios.js"></script>
+    <script defer src="scripts/client.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <h1>Server-Side Calculator</h1>
 
-<head>
-  <meta charset="utf-8">
-  <title>Server-Side Calculator</title>
-  <script defer src="scripts/axios.js"></script>
-  <script defer src="scripts/client.js" charset="utf-8"></script>
-</head>
+    <form data-testid="calculator">
+      <input placeholder="First Number" id="numberOneIn">
+      <button id="plusBtn" onclick="addition(event)">+</button>
+      <button id="subtractBtn" onclick="subtract(event)">-</button>
+      <button id="multiplyBtn" onclick="multiply(event)">*</button>
+      <button id="divideBtn" onclick="divide(event)">/</button>
+      <input placeholder="Second Number" id="numberTwoIn">
+      <button id="equalsBtn" onclick="equal(event)">=</button>
+      <button id="clearBtn" onclick="clear(event)">C</button>
+    </form>
 
-<body>
-  <h1>Server-Side Calculator</h1>
+    <section data-testid="recentResult">
+      <!-- The most recent calculation result goes here. -->
+    </section>
 
-  <form data-testid="calculator">
-    <input placeholder="First Number" id="first-number">
-    <button type="button" data-operator="+" onclick="calculate('+')">+</button>
-    <button type="button" data-operator="-" onclick="calculate('-')">-</button>
-    <button type="button" data-operator="*" onclick="calculate('*')">*</button>
-    <button type="button" data-operator="/" onclick="calculate('/')">/</button>
-    <input placeholder="Second Number" id="second-number">
-    <button type="button" onclick="equal()">=</button>
-    <button type="button" onclick="clear()">C</button>
-  </form>
-
-  <section data-testid="recentResult">
-    <!-- The most recent calculation result goes here. -->
-  </section>
-
-  <section data-testid="resultHistory">
-    <!-- The list of calculation results goes here. -->
-  </section>
-</body>
-
+    <section data-testid="resultHistory">
+      <!-- The list of calculation results goes here. -->
+    </section>
+  </body>
 </html>

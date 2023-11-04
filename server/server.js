@@ -7,14 +7,24 @@ app.use(express.static('server/public'));
 
 // Global variable that will contain all of the
 // calculation objects:
-let calculations = []
+let history = [];
+let result;
 
 
 // Here's a wonderful place to make some routes:
 
 // GET /calculations
+app.get('/history', (req, res) => {
+  res.send(history);
+})
+// this sends the result to the client
+app.get('/result', (req, res) => {
+  res.send({result: result});
+})
 
 // POST /calculations
+
+
 
 
 // PLEASE DO NOT MODIFY ANY CODE BELOW THESE BEARS:
