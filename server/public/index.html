@@ -9,12 +9,12 @@
   <body>
     <h1>Server-Side Calculator</h1>
 
-    <form data-testid="calculator">
+    <form onsubmit="formSubmit(event)" data-testid="calculator">
       <input placeholder="First Number" id="numberOneIn">
-      <button id="plusBtn" onclick="onAdd(event)">+</button>
-      <button id="subtractBtn" onclick="onSubtract(event)">-</button>
-      <button id="multiplyBtn" onclick="onMultiply(event)">*</button>
-      <button id="divideBtn" onclick="onDivide(event)">/</button>
+      <button id="plusBtn" onclick="onAdd()">+</button>
+      <button id="subtractBtn" onclick="onSubtract()">-</button>
+      <button id="multiplyBtn" onclick="onMultiply()">*</button>
+      <button id="divideBtn" onclick="onDivide()">/</button>
       <input placeholder="Second Number" id="numberTwoIn">
       <button id="equalsBtn" onclick="onEquals(event)">=</button>
       <button id="clearBtn" onclick="onClear(event)">C</button>

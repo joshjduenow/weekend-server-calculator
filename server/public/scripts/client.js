@@ -5,39 +5,47 @@ function onReady() {
 }
 
 onReady()
-let firstNumber = 0;
-let secondNumber = 0;
+let operators = "";
 
-function onAdd(event){
-    event.preventDefault();
-    let adding = document.getElementById("plusBtn");
-    console.log("checking add function", adding);
+function formSubmit(event){
+    event.preventDefault()
+}
+function onAdd(){
+    operators = "+"
+    console.log("checking add function", operators);
 }
 
-function onSubtract(event){
-    event.preventDefault()
+function onSubtract(){
+    operators = "-"
 
     console.log("checking subtract function",);
 
 }
 
-function onMultiply(event){
-    event.preventDefault()
+function onMultiply(){
+    operators = "*"
     console.log("checking multiply function",);
 
 }
 
-function onDivide(event){
-    event.preventDefault()
+function onDivide(){
+    operators = "/"
     console.log("checking divide function",);
 
 }
 
-function onEquals(event){
-    event.preventDefault()
+
+function onEquals(){
+    let firstNumber = document.getElementById('numberOneIn').value;
+    let secondNumber = document.getElementById('numberTwoIn').value;
+    let newCalc = {
+        firstNumber,
+        secondNumber,
+        operators
+    }
     document.getElementById('numberOneIn').value = '';
     document.getElementById('numberTwoIn').value = '';
-    console.log("checking equal function",);
+    console.log("checking equal function", firstNumber, secondNumber, operators, newCalc);
     axios({
         url: '/result',
         method: 'POST'
