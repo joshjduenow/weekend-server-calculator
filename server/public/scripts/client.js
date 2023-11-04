@@ -39,8 +39,8 @@ function onEquals(event){
     document.getElementById('numberTwoIn').value = '';
     console.log("checking equal function",);
     axios({
-        url: '/calculations',
-        method: 'GET'
+        url: '/result',
+        method: 'POST'
     }).then((response) => {
         console.log('response.data:', response.data)
         let equations = response.data
@@ -56,7 +56,6 @@ function onClear(event){
 }
 function renderEquation(equations) {
     let equationResults = document.getElementById('resultHistory');
-    //equationResults.innerHTML = '';
     for (let equation of equations) {
         equationResults.innerHTML += `
         <p>${equation}:</p><br>
