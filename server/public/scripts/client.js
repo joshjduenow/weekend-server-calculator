@@ -46,20 +46,22 @@ function onEquals(){
     document.getElementById('numberOneIn').value = '';
     document.getElementById('numberTwoIn').value = '';
     console.log("checking equal function", firstNumber, secondNumber, operators, newCalc);
-    axios({
-        url: '/result',
-        method: 'POST'
-    }).then((response) => {
-        console.log('response.data:', response.data)
-        let equations = response.data
-        renderEquation(equations)
-    })
+//     axios({
+//         url: '/result',
+//         method: 'POST'
+//     }).then((response) => {
+//         console.log('response.data:', response.data)
+//         let equations = response.data
+//         renderEquation(equations)
+//     })
 }
 
 
-function onClear(event){
-    event.preventDefault()
-    console.log("checking clear function",);
+function onClear(){
+    document.getElementById('numberOneIn').value = '';
+    document.getElementById('numberTwoIn').value = '';
+
+    console.log("checking clear function", );
 
 }
 function renderEquation(equations) {
