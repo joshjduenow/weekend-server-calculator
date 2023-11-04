@@ -14,7 +14,7 @@ let result;
 // Here's a wonderful place to make some routes:
 
 // GET /calculations
-app.get('/history', (req, res) => {
+app.get('/calculations', (req, res) => {
   res.send(equations);
 })
 // this sends the result to the client
@@ -23,7 +23,13 @@ app.get('/result', (req, res) => {
 })
 
 // POST /calculations
-
+app.post('/calculations', (req, res) => {
+  console.log('POST /calculations received a request!')
+  console.log('req.body', req.body)
+  let newCalc = req.body
+  equations.push(newCalc)
+  res.sendStatus(201)
+})
 
 
 
