@@ -1,31 +1,34 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Server-Side Calculator</title>    
-    <script defer src="scripts/axios.js"></script>
-    <script defer src="scripts/client.js" charset="utf-8"></script>
-  </head>
-  <body>
-    <h1>Server-Side Calculator</h1>
 
-    <form data-testid="calculator">
-      <input placeholder="First Number">
-      <button onclick="add()">+</button>
-      <button onclick="subtract()">-</button>
-      <button onclick="multiply()">*</button>
-      <button onclick="divide()">/</button>
-      <input placeholder="Second Number">
-      <button onclick="equal()">=</button>
-      <button onclick="clear()">C</button>
-    </form>
+<head>
+  <meta charset="utf-8">
+  <title>Server-Side Calculator</title>
+  <script defer src="scripts/axios.js"></script>
+  <script defer src="scripts/client.js" charset="utf-8"></script>
+</head>
 
-    <section data-testid="recentResult">
-      <!-- The most recent calculation result goes here. -->
-    </section>
+<body>
+  <h1>Server-Side Calculator</h1>
 
-    <section data-testid="resultHistory">
-      <!-- The list of calculation results goes here. -->
-    </section>
-  </body>
+  <form data-testid="calculator">
+    <input placeholder="First Number" id="first-number">
+    <button type="button" data-operator="+" onclick="calculate('+')">+</button>
+    <button type="button" data-operator="-" onclick="calculate('-')">-</button>
+    <button type="button" data-operator="*" onclick="calculate('*')">*</button>
+    <button type="button" data-operator="/" onclick="calculate('/')">/</button>
+    <input placeholder="Second Number" id="second-number">
+    <button type="button" onclick="equal()">=</button>
+    <button type="button" onclick="clear()">C</button>
+  </form>
+
+  <section data-testid="recentResult">
+    <!-- The most recent calculation result goes here. -->
+  </section>
+
+  <section data-testid="resultHistory">
+    <!-- The list of calculation results goes here. -->
+  </section>
+</body>
+
 </html>
