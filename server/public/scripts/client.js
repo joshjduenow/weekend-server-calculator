@@ -5,35 +5,43 @@ function onReady() {
 }
 
 onReady()
+let firstNumber = 0;
+let secondNumber = 0;
 
 function onAdd(event){
-    event.preventDefault()
-
+    event.preventDefault();
+    let adding = document.getElementById("plusBtn").value;
+    console.log("checking add function", adding);
 }
 
 function onSubtract(event){
     event.preventDefault()
-    
+    console.log("checking subtract function",);
+
 }
 
 function onMultiply(event){
     event.preventDefault()
-    
+    console.log("checking multiply function",);
+
 }
 
 function onDivide(event){
     event.preventDefault()
-    
+    console.log("checking divide function",);
+
 }
 
 function onEquals(event){
     event.preventDefault()
-    
+    console.log("checking equal function",);
+
 }
 
 function onClear(event){
     event.preventDefault()
-    
+    console.log("checking clear function",);
+
 }
 //let roundCounter =0;
 

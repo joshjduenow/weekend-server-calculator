@@ -11,13 +11,13 @@
 
     <form data-testid="calculator">
       <input placeholder="First Number" id="numberOneIn">
-      <button id="plusBtn" onclick="addition(event)">+</button>
-      <button id="subtractBtn" onclick="subtract(event)">-</button>
-      <button id="multiplyBtn" onclick="multiply(event)">*</button>
-      <button id="divideBtn" onclick="divide(event)">/</button>
+      <button id="plusBtn" onclick="onAdd(event)">+</button>
+      <button id="subtractBtn" onclick="onSubtract(event)">-</button>
+      <button id="multiplyBtn" onclick="onMultiply(event)">*</button>
+      <button id="divideBtn" onclick="onDivide(event)">/</button>
       <input placeholder="Second Number" id="numberTwoIn">
-      <button id="equalsBtn" onclick="equal(event)">=</button>
-      <button id="clearBtn" onclick="clear(event)">C</button>
+      <button id="equalsBtn" onclick="onEquals(event)">=</button>
+      <button id="clearBtn" onclick="onClear(event)">C</button>
     </form>
 
     <section data-testid="recentResult">
