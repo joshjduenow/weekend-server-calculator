@@ -13,7 +13,7 @@ function formSubmit(event) {
 function onAdd() {
     console.log("checking add function", operator);
     return operator = "+";
-    
+
 }
 
 function onSubtract() {
@@ -35,25 +35,37 @@ function onDivide() {
 function onEquals() {
     let firstNumber = document.getElementById('numberOneIn').value;
     let secondNumber = document.getElementById('numberTwoIn').value;
-    let newCalc = {
-        firstNumber: firstNumber,
+    let equals = {
+        firstNumber: Number(firstNumber),
         operator: operator,
-        secondNumber: secondNumber
-        
+        secondNumber: Number(secondNumber)
+
     }
     document.getElementById('numberOneIn').value = '';
     document.getElementById('numberTwoIn').value = '';
-    console.log("checking equal function", firstNumber, secondNumber, operator, newCalc);
-        axios({
-            url: '/calculations',
-            method: 'POST'
-        }).then((response) => {
-            console.log('response.data:', response.data)
-            //let equations = response.data
-            //renderEquation(equations)
-        })
+    console.log("checking equal function", firstNumber, secondNumber, operator, equals);
+    axios({
+        url: '/calculations',
+        method: 'POST',
+        data: 'equals'
+    }).then((response) => {
+        console.log('response.data:', response.data)
+        //let equations = response.data
+        getCalc();
+    })
 }
 
+function getCalc(){
+    axios({
+        url: '/calculations',
+        method: 'GET'
+    }).then((response) => {
+        console.log('response.data:', response.data)
+        let inventory = response.data
+        //let contentDiv = document.querySelector('');
+        renderInventory(inventory)
+    })
+}
 
 function onClear() {
     document.getElementById('numberOneIn').value = '';

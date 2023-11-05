@@ -30,25 +30,25 @@ app.post('/calculations', (req, res) => {
   calculations.push(newCalc)
   res.sendStatus(201)
 })
- function newCalc(object) {
-  if(object.operator === '+') {
+function newCalc(object) {
+  if (object.operator === '+') {
     object.result = object.numOne + object.numTwo
     calculations.push(object);
   }
-    else if(object.operator === '-') {
-      object.result = object.numOne - object.numTwo
-      calculations.push(object)
-    }
-    else if(object.operator === '*') {
-      object.result = object.numOne * object.numTwo
-      calculations.push(object)
-    }
-    else if(object.operator === '/') {
-      object.result = object.numOne / object.numTwo
-      calculations.push(object)
-    }
-    console.log(object);
- }
+  else if (object.operator === '-') {
+    object.result = object.numOne - object.numTwo
+    calculations.push(object)
+  }
+  else if (object.operator === '*') {
+    object.result = object.numOne * object.numTwo
+    calculations.push(object)
+  }
+  else if (object.operator === '/') {
+    object.result = object.numOne / object.numTwo
+    calculations.push(object)
+  }
+  console.log(object);
+}
 
 
 // PLEASE DO NOT MODIFY ANY CODE BELOW THESE BEARS:
