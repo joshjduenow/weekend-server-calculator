@@ -26,11 +26,29 @@ app.get('/result', (req, res) => {
 app.post('/calculations', (req, res) => {
   console.log('POST /calculations received a request!')
   console.log('req.body', req.body)
-  let newCalc = req.body
+  newCalc = req.body
   calculations.push(newCalc)
   res.sendStatus(201)
 })
-
+ function newCalc(object) {
+  if(object.operator === '+') {
+    object.result = object.numOne + object.numTwo
+    calculations.push(object);
+  }
+    else if(object.operator === '-') {
+      object.result = object.numOne - object.numTwo
+      calculations.push(object)
+    }
+    else if(object.operator === '*') {
+      object.result = object.numOne * object.numTwo
+      calculations.push(object)
+    }
+    else if(object.operator === '/') {
+      object.result = object.numOne / object.numTwo
+      calculations.push(object)
+    }
+    console.log(object);
+ }
 
 
 // PLEASE DO NOT MODIFY ANY CODE BELOW THESE BEARS:

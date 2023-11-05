@@ -49,7 +49,7 @@ function onEquals() {
             method: 'POST'
         }).then((response) => {
             console.log('response.data:', response.data)
-            let equations = response.data
+            //let equations = response.data
             //renderEquation(equations)
         })
 }
