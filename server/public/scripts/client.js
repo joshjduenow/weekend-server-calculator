@@ -50,7 +50,6 @@ function onEquals() {
         data: equals
     }).then((response) => {
         console.log('response.data:', response.data)
-        //let equations = response.data
         getCalc();
     })
 }
@@ -62,8 +61,6 @@ function getCalc() {
         method: 'GET'
     }).then((response) => {
         console.log('response.data:', response.data)
-        // let inventory = response.data
-        // //let contentDiv = document.querySelector('');
         renderEquation(response.data)
     })
 }

@@ -30,9 +30,6 @@ app.post('/calculations', (req, res) => {
   res.sendStatus(201)
 })
 function newCalc(object) {
-  // let numOne = newCalc.numOne;
-  // let numTwo = newCalc.numTwo;
-  // let operator = object.operator;
   if (object.operator === '+') {
     object.result = Number(object.numOne) + Number(object.numTwo)
     calculations.push(object);
