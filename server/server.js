@@ -7,7 +7,14 @@ app.use(express.static('server/public'));
 
 // Global variable that will contain all of the
 // calculation objects:
-let calculations = [];
+let calculations = [
+  {
+    numOne: numOne,
+    numTwo: numTwo,
+    operator: operator,
+    result: result,
+  }
+];
 let result;
 
 
