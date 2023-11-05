@@ -1,59 +1,52 @@
 const express = require('express');
 const app = express();
-let PORT = process.env.PORT || 5001;
+let PORT = process.env.PORT || 8001;
 
 app.use(express.json());
 app.use(express.static('server/public'));
 
 // Global variable that will contain all of the
 // calculation objects:
-let calculations = [
-  {
-    numOne: numOne,
-    numTwo: numTwo,
-    operator: operator,
-    result: result,
-  }
-];
-let numOne = newCalc.numOne;
-let numTwo = newCalc.numTwo;
-let result;
+let calculations = []
+
 
 
 // Here's a wonderful place to make some routes:
 
 // GET /calculations
 app.get('/calculations', (req, res) => {
-  res.send(equations);
+  res.send(calculations);
 })
 // this sends the result to the client
-app.get('/result', (req, res) => {
-  res.send({ result: result });
-})
+// app.get('/result', (req, res) => {
+//   res.send({ result: result });
+// })
 
 // POST /calculations
 app.post('/calculations', (req, res) => {
   console.log('POST /calculations received a request!')
   console.log('req.body', req.body)
-  newCalc = req.body
-  calculations.push(newCalc)
+  newCalc(req.body)
   res.sendStatus(201)
 })
 function newCalc(object) {
+  // let numOne = newCalc.numOne;
+  // let numTwo = newCalc.numTwo;
+  // let operator = object.operator;
   if (object.operator === '+') {
-    object.result = object.numOne + object.numTwo
+    object.result = Number(object.numOne) + Number(object.numTwo)
     calculations.push(object);
   }
   else if (object.operator === '-') {
-    object.result = object.numOne - object.numTwo
+    object.result = Number(object.numOne) - Number(object.numTwo)
     calculations.push(object)
   }
   else if (object.operator === '*') {
-    object.result = object.numOne * object.numTwo
+    object.result = Number(object.numOne) * Number(object.numTwo)
     calculations.push(object)
   }
   else if (object.operator === '/') {
-    object.result = object.numOne / object.numTwo
+    object.result = Number(object.numOne) / Number(object.numTwo)
     calculations.push(object)
   }
   console.log(object);
@@ -66,7 +59,7 @@ function newCalc(object) {
 // Makes it so you don't have to kill the server
 // on 5000 in order to run the tests:
 if (process.env.NODE_ENV === 'test') {
-  PORT = 5001;
+  PORT = 8001;
 }
 
 // This starts the server...but also stores it in a variable.
