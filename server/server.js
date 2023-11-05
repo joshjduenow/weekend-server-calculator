@@ -15,6 +15,8 @@ let calculations = [
     result: result,
   }
 ];
+let numOne = newCalc.numOne;
+let numTwo = newCalc.numTwo;
 let result;
 
 
