@@ -65,7 +65,8 @@ function getCalc() {
     })
 }
 
-function onClear() {
+function onClear(event) {
+    event.preventDefault()
     document.getElementById('numberOneIn').value = '';
     document.getElementById('numberTwoIn').value = '';
 
